@@ -63,6 +63,45 @@ const checkWin = () => {
     
 /*----- functions -----*/
 
+const renderNumberBoard = () => {
+    for (let i=0; i<number.length; i++) {
+       for (let j=0; j<number[i].length; j++) {
+        if (number[i][j] === 9) return;
+        if (i-1 < 0 || i+1 > number.length) return 0;
+        if (j-1 < 0 || j+1 > number[i].length) return 0;
+        number[i][j] = 0;
+        if (number[i-1][j-1] === 9) {
+            number[i][j] ++
+        };
+        if (number[i-1][j] === 9) {
+            number[i][j] ++
+        };
+        if (number[i-1][j+1] === 9) {
+            number[i][j] ++
+        };
+        if (number[i][j-1] === 9) {
+            number[i][j] ++
+        };
+        if (number[i][j+1] === 9) {
+            number[i][j] ++
+        };
+        if (number[i+1][j-1] === 9) {
+            number[i][j] ++
+        };
+        if (number[i+1][j] === 9) {
+            number[i][j] ++
+        };
+        if (number[i+1][j+1] === 9) {
+            number[i][j] ++
+        };
+    }
+}
+}
+
+renderNumberBoard()
+console.log(number[1][1])
+
+
 const renderBomb = () => {
     for (let i=0; i<bombNumber; i++) {
         number[Math.floor(Math.random() * 8)][Math.floor(Math.random() * 10)] = 9;               //Add unique number generator
@@ -87,21 +126,21 @@ const renderBoardNum = () => {
 
 const renderBoardCover = () => {
     boardBodyCover.textContent = "";
-    for(let i=0; i<cover.length; i++)
-    {
-        const boardCoverTr = document.createElement("tr");
-        for(let j=0; j<cover[i].length; j++)
-        {
-            const boardCoverTd = document.createElement("td");
-            boardCoverTd.innerText = cover[i][j];
-            boardCoverTd.addEventListener("click", clickCover(i,j));
-            boardCoverTr.append(boardCoverTd);
-            if (cover[i][j] === 1) {
-                boardCoverTd.style.opacity = "0";
-            }
-        }
-        boardBodyCover.append(boardCoverTr);
-    }
+    // for(let i=0; i<cover.length; i++)
+    // {
+    //     const boardCoverTr = document.createElement("tr");
+    //     for(let j=0; j<cover[i].length; j++)
+    //     {
+    //         const boardCoverTd = document.createElement("td");
+    //         boardCoverTd.innerText = cover[i][j];
+    //         boardCoverTd.addEventListener("click", clickCover(i,j));
+    //         boardCoverTr.append(boardCoverTd);
+    //         if (cover[i][j] === 1) {
+    //             boardCoverTd.style.opacity = "0";
+    //         }
+    //     }
+    //     boardBodyCover.append(boardCoverTr);
+    // }
 }
 
 
