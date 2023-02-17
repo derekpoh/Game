@@ -1,0 +1,19 @@
+tbody {
+    position: absolute;
+}
+
+.cover > tr > td {
+    font-size: 50px;
+    background-color: black;
+    color: black
+}
+
+.cover {
+    opacity: 1;
+}
+
+.number > tr > td {
+    font-size: 50px;
+    background-color: grey;
+    color: black
+}
