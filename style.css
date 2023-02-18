@@ -5,7 +5,8 @@ tbody {
 .cover > tr > td {
     font-size: 50px;
     background-color: black;
-    color: white
+    color: rgba(0,0,0,0);
+    user-select: none;
 }
 
 .cover {
@@ -15,5 +16,6 @@ tbody {
 .number > tr > td {
     font-size: 50px;
     background-color: grey;
-    color: black
+    color: rgba(0,0,0,1);
+    user-select: none;
 }

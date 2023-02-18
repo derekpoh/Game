@@ -35,7 +35,8 @@ const boardBodyCover = document.querySelector(".cover");
     
 /*----- event listeners -----*/
 const clickCover = (i,j) => () => {
-        if (number[i][j] === 9) {
+    if(cover[i][j] === "0") return;
+    if (number[i][j] === 9) {
             cover[i][j] = "0";
             console.log("GAME OVER");
         }
