@@ -1,5 +1,13 @@
+h1 {
+    color: blue;
+    text-align: center;
+}
+
+
 tbody {
     position: absolute;
+    top: 200px;
+    left: 44.5%;
 }
 
 .cover > tr > td {

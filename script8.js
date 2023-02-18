@@ -38,7 +38,7 @@ const clickCover = (i,j) => () => {
     if(cover[i][j] === "0") return;
     if (number[i][j] === 9) {
             cover[i][j] = "0";
-            console.log("GAME OVER");
+            gameOver();
         }
         else {
             floodAll(i,j)
@@ -63,6 +63,15 @@ const checkWin = () => {
         }
     }
     
+const gameOver = () => {
+    for(let i=0; i<cover.length; i++) {
+        for(let j=0; j<cover[i].length; j++) {
+            cover[i][j] = "0";
+            renderAll()
+        }
+    }
+    console.log("GAME OVER");
+}
         
     /*----- functions -----*/
 
