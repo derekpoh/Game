@@ -99,6 +99,10 @@ const gameOver = () => {
     }
 }
 
+const easyGame = () => {
+    main();
+}
+
 const resetGame = () => {
     for(let i=0; i<cover.length; i++) {
         for(let j=0; j<cover[i].length; j++) {
@@ -316,8 +320,14 @@ const renderAll = () => {
             
 const main = () => {
     document.querySelector(".reset").addEventListener("click", resetGame)
+    gameOutput.textContent = "";
     renderBomb();
     renderAll();
     renderNumberBoardTotal();
     }
-main()
+
+
+const easyScreen = () => {
+    document.querySelector(".easy").addEventListener("click", easyGame)
+}
+easyScreen();
