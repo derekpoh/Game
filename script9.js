@@ -27,6 +27,8 @@ const number = [
 const totalSquareCount = 80;
     
 const bombNumber = 10;
+
+const flagNumber = 10;
     
 /*----- cached elements  -----*/
 const boardBodyNum = document.querySelector(".number");
@@ -35,8 +37,31 @@ const gameOutput = document.querySelector("output");
     
     
 /*----- event listeners -----*/
-const clickCover = (i,j) => () => {
+
+const clickFlag = (i,j) => (event) => {                                                                                    //Places a flag on potential mine square
+    event.preventDefault();                                                                                                //Square "1" to denote square is flagged
     if(cover[i][j] === "0") return;
+    if(cover[i][j] === "1") {
+        cover[i][j] = number[i][j];
+        renderAll();
+        return;
+    }
+    let flagPlaced = 0;
+    for(let i=0; i<cover.length; i++) {
+        for(let j=0; j<cover[i].length; j++) {
+            if (cover[i][j] === "1") {
+                flagPlaced++;
+            }
+        }
+    }
+    if (flagPlaced === flagNumber) return;
+    cover[i][j] = "1";
+    renderAll();
+}
+
+const clickCover = (i,j) => () => {                                                                                       //Uncovers clicked square and activates flood mechanism
+    if(cover[i][j] === "0") return;                                                                                       //String "0" to denote uncovered square
+    if(cover[i][j] === "1") return;
     if (number[i][j] === 9) {
             cover[i][j] = "0";
             gameOver();
@@ -61,7 +86,6 @@ const checkWin = () => {
         }
         if (totalUncovered === totalSquareCount - bombNumber) {
             renderWin();
-            console.log("Win");
         }
     }
     
@@ -73,7 +97,16 @@ const gameOver = () => {
             renderAll();
         }
     }
-    console.log("GAME OVER");
+}
+
+const resetGame = () => {
+    for(let i=0; i<cover.length; i++) {
+        for(let j=0; j<cover[i].length; j++) {
+            cover[i][j] = 0;
+            number[i][j] = 0;
+        }
+    }
+    main();
 }
         
     /*----- functions -----*/
@@ -262,9 +295,13 @@ const renderBoardCover = () => {                                                
                     const boardCoverTd = document.createElement("td");
                     boardCoverTd.innerText = cover[i][j];
                     boardCoverTd.addEventListener("click", clickCover(i,j));
+                    boardCoverTd.addEventListener("contextmenu", clickFlag(i,j));
                     boardCoverTr.append(boardCoverTd);
                     if (cover[i][j] === "0") {
-                            boardCoverTd.style.opacity = "0";
+                        boardCoverTd.style.opacity = "0";
+                        }
+                    if (cover[i][j] === "1") {
+                        boardCoverTd.style.backgroundColor = "green";
                         }
                     }
                     boardBodyCover.append(boardCoverTr);
@@ -278,8 +315,9 @@ const renderAll = () => {
             }
             
 const main = () => {
-        renderBomb();
-        renderAll();
-        renderNumberBoardTotal()
+    document.querySelector(".reset").addEventListener("click", resetGame)
+    renderBomb();
+    renderAll();
+    renderNumberBoardTotal();
     }
 main()
