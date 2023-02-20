@@ -14,33 +14,39 @@ h2 {
 }
 
 .buttons {
-    font-size: 50px;
+    font-size: 40px;
     margin: 10px 
+}
+
+table {
+    display: flex;
+    justify-content: center;
 }
 
 
 tbody {
     position: absolute;
-    top: 200px;
-    left: 44.5%;
+    border: 2px black solid;
 }
 
 .cover > tr > td {
-    font-size: 20px;
+    font-size: 30px;
     background-color: black;
     color: rgba(0,0,0,0);
     user-select: none;
+    text-align: center;
     width: 30px;
     height: 30px;
     opacity: 1;
+
 }
 
-
 .number > tr > td {
-    font-size: 20px;
+    font-size: 30px;
     background-color: grey;
     color: rgba(0,0,0,1);
     user-select: none;
+    text-align: center;
     width: 30px;
     height: 30px;
 }

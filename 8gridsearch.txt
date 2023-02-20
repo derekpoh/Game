@@ -1,0 +1,16 @@
+[0,0,0],
+[0,1,0],
+[0,0,0],
+
+
+number[i][j] = number[1][1]
+
+
+number[0][0] = number[i-1][j-1] 
+number[0][1] = number[i-1][j] 
+number[0][2] = number[i-1][j+1] 
+number[1][0] = number[i][j-1] 
+number[1][2] = number[i][j+1] 
+number[2][0] = number[i+1][j-1] 
+number[2][1] = number[i+1][j] 
+number[2][2] = number[i+1][j+1] 

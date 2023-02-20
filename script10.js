@@ -471,6 +471,7 @@ const renderScreen = () => {
     if (display.button === "mode") {
     boardBodyNum.textContent = "";
     boardBodyCover.textContent = "";
+    gameOutput.textContent = "";
 } 
 }
 
