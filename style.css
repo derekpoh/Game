@@ -1,11 +1,23 @@
 h1 {
     color: blue;
     text-align: center;
+    font-size: 50px;
 }
 
 h2 {
     text-align: center;
 }
+
+.mode {
+    text-align: center ;
+    padding: 200px
+}
+
+.buttons {
+    font-size: 50px;
+    margin: 10px 
+}
+
 
 tbody {
     position: absolute;
@@ -14,19 +26,22 @@ tbody {
 }
 
 .cover > tr > td {
-    font-size: 50px;
+    font-size: 20px;
     background-color: black;
     color: rgba(0,0,0,0);
     user-select: none;
-}
-
-.cover {
+    width: 30px;
+    height: 30px;
     opacity: 1;
 }
 
+
 .number > tr > td {
-    font-size: 50px;
+    font-size: 20px;
     background-color: grey;
     color: rgba(0,0,0,1);
     user-select: none;
+    width: 30px;
+    height: 30px;
 }
+

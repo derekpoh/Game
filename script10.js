@@ -102,23 +102,36 @@ const cover = [[
     ]
 ]
 
-const totalSquareCount = 80;
-    
-const bombNumber = 10;
+const display = {
+    button: "mode",};
 
-const flagNumber = 10;
-    
+const totalSquareCount = [80,252,480];
+
+const boardLength = [10,18,24];
+
+const boardWidth = [8,14,20];
+
+const bombNumber = [10,40,99];
+
+const flagNumber = [10,40,99];
+
+
 /*----- cached elements  -----*/
 const boardBodyNum = document.querySelector(".number");
 const boardBodyCover = document.querySelector(".cover");
 const gameOutput = document.querySelector("output");
 let Cover = cover[0];
 let Numb = number[0];
-    
+let TotalSquareCount = totalSquareCount[0];
+let BoardLength = boardLength[0];
+let BoardWidth = boardWidth[0];
+let BombNumber = bombNumber[0];
+let FlagNumber = flagNumber[0];
+
 /*----- event listeners -----*/
 
 const clickFlag = (i,j) => (event) => {                                                                                    //Places a flag on potential mine square
-    event.preventDefault();                                                                                                //Square "1" to denote square is flagged
+    event.preventDefault();                                                                                                //String "1" to denote square is flagged
     if(Cover[i][j] === "0") return;
     if(Cover[i][j] === "1") {
         Cover[i][j] = Numb[i][j];
@@ -133,7 +146,7 @@ const clickFlag = (i,j) => (event) => {                                         
             }
         }
     }
-    if (flagPlaced === flagNumber) return;
+    if (flagPlaced === FlagNumber) return;
     Cover[i][j] = "1";
     renderAll();
 }
@@ -154,7 +167,7 @@ const clickCover = (i,j) => () => {                                             
         renderAll()
     }
     
-const checkWin = () => {
+const checkWin = () => {                                                                                                 //Checks if game is won after each click
         let totalUncovered = 0;
         for(let i=0; i<Cover.length; i++) {
             for(let j=0; j<Cover[i].length; j++) {
@@ -163,12 +176,12 @@ const checkWin = () => {
                 }
             }
         }
-        if (totalUncovered === totalSquareCount - bombNumber) {
+        if (totalUncovered === TotalSquareCount - BombNumber) {
             renderWin();
         }
     }
     
-const gameOver = () => {
+const gameOver = () => {                                                                                                //Game is lose if player clicks on bomb
     for(let i=0; i<Cover.length; i++) {
         for(let j=0; j<Cover[i].length; j++) {
             Cover[i][j] = "0";
@@ -178,25 +191,43 @@ const gameOver = () => {
     }
 }
 
-const easyGame = () => {
+const easyGame = () => {                                                                                               //Easy Mode
+    display.button = "screen";
     Cover = cover[0];
     Numb = number[0];
+    TotalSquareCount = totalSquareCount[0];
+    BoardLength = boardLength[0];
+    BoardWidth = boardWidth[0];
+    BombNumber = bombNumber[0];
+    FlagNumber = flagNumber[0];
     main();
 }
 
-const mediumGame = () => {
+const mediumGame = () => {                                                                                             //Medium Mode
+    display.button = "screen";
     Cover = cover[1];
     Numb = number[1];
+    TotalSquareCount = totalSquareCount[1];
+    BoardLength = boardLength[1];
+    BoardWidth = boardWidth[1];
+    BombNumber = bombNumber[1];
+    FlagNumber = flagNumber[1];
     main();
 }
 
-const hardGame = () => {
+const hardGame = () => {                                                                                               //Hard Mode
+    display.button = "screen";
     Cover = cover[2];
     Numb = number[2];
+    TotalSquareCount = totalSquareCount[2];
+    BoardLength = boardLength[2];
+    BoardWidth = boardWidth[2];
+    BombNumber = bombNumber[2];
+    FlagNumber = flagNumber[2];
     main();
 }
 
-const resetGame = () => {
+const resetGame = () => {                                                                                             //Reset game
     for(let i=0; i<Cover.length; i++) {
         for(let j=0; j<Cover[i].length; j++) {
             Cover[i][j] = 0;
@@ -204,6 +235,17 @@ const resetGame = () => {
         }
     }
     main();
+}
+
+const homePage = () => {                                                                                             //Go back to home screen
+    display.button = "mode"; 
+    for(let i=0; i<Cover.length; i++) {
+        for(let j=0; j<Cover[i].length; j++) {
+            Cover[i][j] = 0;
+            Numb[i][j] = 0;
+        }
+    }
+    renderScreen();
 }
         
     /*----- functions -----*/
@@ -259,7 +301,7 @@ const resetGame = () => {
         floodAll(i+1,j)
     }
     
-const renderNumberBoard1 = (i,j) => {                                                                                //Search diagonal (up,left)
+const renderNumberBoard1 = (i,j) => {                                                                                //Search diagonal (up,left)    --   See renderNumberBoardTotal()
             if (Numb[i][j] === 9) return 1;
             if (i-1 < 0) return 0;
             if (j-1 < 0) return 0;
@@ -353,13 +395,13 @@ const renderNumberBoard8 = (i,j) => {                                           
     }
     
 const renderBomb = () => {
-        for (let i=0; i<bombNumber; i++) {
-            Numb[Math.floor(Math.random() * 8)][Math.floor(Math.random() * 10)] = 9;                               //Add unique number generator
+        for (let i=0; i<BombNumber; i++) {
+            Numb[Math.floor(Math.random() * BoardWidth)][Math.floor(Math.random() * BoardLength)] = 9;                //Add unique number generator
         };            
         renderAll();
     }
 
-const renderGameOver = () => {
+const renderGameOver = () => {                                                                                      
     gameOutput.textContent = "GAME OVER";
 }
 
@@ -409,20 +451,33 @@ const renderBoardCover = () => {                                                
 const renderAll = () => {
                 renderBoardCover();
                 renderBoardNum();
+                renderScreen();
             }
             
-const main = () => {
-    document.querySelector(".reset").addEventListener("click", resetGame)
+const main = () => {                                                                                                //Renders game when player selects difficulty
+    document.querySelector("#reset").addEventListener("click", resetGame)
+    document.querySelector("#home").addEventListener("click", homePage)
     gameOutput.textContent = "";
     renderBomb();
     renderAll();
     renderNumberBoardTotal();
     }
 
-
-const easyScreen = () => {
-    document.querySelector(".easy").addEventListener("click", easyGame);
-    document.querySelector(".medium").addEventListener("click", mediumGame);
-    document.querySelector(".hard").addEventListener("click", hardGame);
+const renderScreen = () => {
+    document.querySelector(".mode").style.display = "none";                                                        //Render between 'home' and 'game' screen
+    document.querySelector(".screen").style.display = "none";
+    const buttonOnDisplay = document.querySelector("." + display.button)
+    buttonOnDisplay.style.display = "block";
+    if (display.button === "mode") {
+    boardBodyNum.textContent = "";
+    boardBodyCover.textContent = "";
+} 
 }
-easyScreen();
+
+const startScreen = () => {                                                                                       //Starting screen when webpage is loaded
+    document.querySelector("#easy").addEventListener("click", easyGame);
+    document.querySelector("#medium").addEventListener("click", mediumGame);
+    document.querySelector("#hard").addEventListener("click", hardGame);
+    document.querySelector(".screen").style.display = "none";
+}
+startScreen();
