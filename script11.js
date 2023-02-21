@@ -2,120 +2,15 @@
 
 
 /*----- state variables -----*/
-const number = [[
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    ],
-    [  
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    ],
-    [
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    ]
-]
-    
-const cover = [[
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    ],
-    [  
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    ],
-    [
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    ]
-]
 
 const game = {
     button: "mode",
+    totalSquareCount: [80,252,480],
+    boardLength: [10,18,24],
+    boardWidth: [8,14,20],
+    bombNumber: [10,42,107],
+    flagNumber: [10,42,107],
 };
-
-    const totalSquareCount = [80,252,480];
-    
-    const boardLength = [10,18,24];
-    
-    const boardWidth = [8,14,20];
-    
-    const bombNumber = [10,40,99];
-    
-    const flagNumber = [10,40,99];
-
 
 /*----- cached elements  -----*/
 const boardBodyNum = document.querySelector(".number");
@@ -123,11 +18,11 @@ const boardBodyCover = document.querySelector(".cover");
 const gameOutput = document.querySelector("output");
 let Cover = cover[0];
 let Numb = number[0];
-let TotalSquareCount = totalSquareCount[0];
-let BoardLength = boardLength[0];
-let BoardWidth = boardWidth[0];
-let BombNumber = bombNumber[0];
-let FlagNumber = flagNumber[0];
+let TotalSquareCount = game.totalSquareCount[0];
+let BoardLength = game.boardLength[0];
+let BoardWidth = game.boardWidth[0];
+let BombNumber = game.bombNumber[0];
+let FlagNumber = game.flagNumber[0];
 
 /*----- event listeners -----*/
 
@@ -170,24 +65,32 @@ const clickCover = (i,j) => () => {                                             
     
 const checkWin = () => {                                                                                                 //Checks if game is won after each click
         let totalUncovered = 0;
+        let bombPlaced = 0;
         for(let i=0; i<Cover.length; i++) {
             for(let j=0; j<Cover[i].length; j++) {
                 if (Cover[i][j] === "0") {
                     totalUncovered++;
                 }
+                if (Numb[i][j] === 9) {
+                    bombPlaced++;
+                }
             }
         }
-        if (totalUncovered === TotalSquareCount - BombNumber) {
+        if (totalUncovered === TotalSquareCount - bombPlaced) {
+            uncoverEntireBoard();
             renderWin();
         }
     }
     
 const gameOver = () => {                                                                                                //Game is lose if player clicks on bomb
+    uncoverEntireBoard();
+    renderGameOver();
+}
+
+const uncoverEntireBoard = () => {                                                                                     //Exposes entire board
     for(let i=0; i<Cover.length; i++) {
         for(let j=0; j<Cover[i].length; j++) {
             Cover[i][j] = "0";
-            renderGameOver();
-            renderAll();
         }
     }
 }
@@ -208,26 +111,26 @@ const setGameDifficulty = (i) => {
     game.button = "screen";
     Cover = cover[i];
     Numb = number[i];
-    TotalSquareCount = totalSquareCount[i];
-    BoardLength = boardLength[i];
-    BoardWidth = boardWidth[i];
-    BombNumber = bombNumber[i];
-    FlagNumber = flagNumber[i];
+    TotalSquareCount = game.totalSquareCount[i];
+    BoardLength = game.boardLength[i];
+    BoardWidth = game.boardWidth[i];
+    BombNumber = game.bombNumber[i];
+    FlagNumber = game.flagNumber[i];
     main();
 }
 
 const resetGame = () => {                                                                                             //Reset game
-    clearBoard();
+    clearEntireBoard();
     main();
 }
 
 const homePage = () => {                                                                                              //Go back to home screen
     game.button = "mode"; 
-    clearBoard();
+    clearEntireBoard();
     renderScreen();
 }
 
-const clearBoard = () => {                                                                                            //Removes all board numbers and bombs
+const clearEntireBoard = () => {                                                                                      //Removes all board numbers and bombs
     for(let i=0; i<Cover.length; i++) {
         for(let j=0; j<Cover[i].length; j++) {
             Cover[i][j] = 0;
@@ -395,6 +298,12 @@ const renderGameOver = () => {
 
 const renderWin = () => {
     gameOutput.textContent = "Win";
+    for(let i=0; i<Cover.length; i++) {
+        for(let j=0; j<Cover[i].length; j++) {
+            document.querySelector("td").removeEventListener("click", clickCover(i,j));
+            document.querySelector("td").removeEventListener("contextmenu", clickFlag(i,j));
+        }
+    }
 }
     
 const renderBoardNum = () => {                                                                                       //Renders board underneath, holds square number and bombs

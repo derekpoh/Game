@@ -1,16 +1,27 @@
+body {
+    
+    background-size: cover;
+  }
+
 h1 {
-    color: blue;
+    color: white;
     text-align: center;
     font-size: 50px;
 }
 
 h2 {
+    color: white;
     text-align: center;
 }
 
 .mode {
-    text-align: center ;
-    padding: 200px
+    text-align: center;
+    margin-top: 30%;
+}
+
+.screen {
+margin-left: 20%;
+margin-top: 15%;
 }
 
 .buttons {
@@ -27,6 +38,7 @@ table {
 tbody {
     position: absolute;
     border: 2px black solid;
+    margin-top: 5%;
 }
 
 .cover > tr > td {
@@ -37,7 +49,7 @@ tbody {
     text-align: center;
     width: 30px;
     height: 30px;
-    opacity: 1;
+    opacity: 0.4;
 
 }
 
