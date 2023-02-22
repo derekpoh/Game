@@ -1,5 +1,5 @@
 body {
-    
+    background-image: url("https://www.linkpicture.com/q/2224701.jpg");
     background-size: cover;
   }
 
@@ -43,23 +43,12 @@ tbody {
 
 .cover > tr > td {
     font-size: 30px;
-    background-color: black;
-    color: rgba(0,0,0,0);
+    background-color: blue;
+    color: black;
     user-select: none;
     text-align: center;
-    width: 30px;
-    height: 30px;
-    opacity: 0.4;
-
+    width: 40px;
+    height: 40px;
 }
 
-.number > tr > td {
-    font-size: 30px;
-    background-color: grey;
-    color: rgba(0,0,0,1);
-    user-select: none;
-    text-align: center;
-    width: 30px;
-    height: 30px;
-}
 

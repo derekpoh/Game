@@ -3,6 +3,56 @@
 
 /*----- state variables -----*/
 
+const cover = [[
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    ],
+    [  
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    ],
+    [
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    ]
+]
+
 const game = {
     button: "mode",
     totalSquareCount: [80,252,480],
@@ -13,11 +63,9 @@ const game = {
 };
 
 /*----- cached elements  -----*/
-const boardBodyNum = document.querySelector(".number");
 const boardBodyCover = document.querySelector(".cover");
 const gameOutput = document.querySelector("output");
 let Cover = cover[0];
-let Numb = number[0];
 let TotalSquareCount = game.totalSquareCount[0];
 let BoardLength = game.boardLength[0];
 let BoardWidth = game.boardWidth[0];
@@ -26,37 +74,47 @@ let FlagNumber = game.flagNumber[0];
 
 /*----- event listeners -----*/
 
-const clickFlag = (i,j) => (event) => {                                                                                    //Places a flag on potential mine square
-    event.preventDefault();                                                                                                //String "1" to denote square is flagged
-    if(Cover[i][j] === "0") return;
-    if(Cover[i][j] === "1") {
-        Cover[i][j] = Numb[i][j];
+const clickFlag = (i,j) => (event) => {                                                                                    //Places a flag on potential mine square 
+    event.preventDefault();                                                                                                
+    if(Cover[i][j] === String(Cover[i][j])) return;
+    if (Cover[i][j] === 11) {                                                                                              //Returns bomb to original when unflagged
+        Cover[i][j] = 9;
+        renderAll();
+        return
+    }
+    if(Cover[i][j] === 10) {                                                                                               //Returns cell to original number when unflagged
+        Cover[i][j] = renderNumberBoard1(i,j) + renderNumberBoard2(i,j) + renderNumberBoard3(i,j) + renderNumberBoard4(i,j) + renderNumberBoard5(i,j) + renderNumberBoard6(i,j) + renderNumberBoard7(i,j) + renderNumberBoard8(i,j);
         renderAll();
         return;
     }
-    let flagPlaced = 0;
+    let flagPlaced = 0;                                                                                                    //Limits max number of flags = number of bombs placed
     for(let i=0; i<Cover.length; i++) {
         for(let j=0; j<Cover[i].length; j++) {
-            if (Cover[i][j] === "1") {
+            if (Cover[i][j] === 10) {
                 flagPlaced++;
             }
         }
     }
-    if (flagPlaced === FlagNumber) return;
-    Cover[i][j] = "1";
+    if (flagPlaced === FlagNumber) return;                                                                                //Bomb cell = 11, rest of cells = 10
+    if (Cover[i][j] === 9) {
+        Cover[i][j] = 11;
+        renderAll();
+        return
+    }
+    Cover[i][j] = 10;
     renderAll();
 }
 
 const clickCover = (i,j) => () => {                                                                                       //Uncovers clicked square and activates flood mechanism
-    if(Cover[i][j] === "0") return;                                                                                       //String "0" to denote uncovered square
-    if(Cover[i][j] === "1") return;
-    if (Numb[i][j] === 9) {
-        Cover[i][j] = "0";
-            gameOver();
+    if(Cover[i][j] === String(Cover[i][j])) return;                                                                       //Prevent flagged cells from accidentally being uncovered
+    if(Cover[i][j] === 10 || Cover[i][j] === 11) return;
+    if (Cover[i][j] === 9) {
+        gameOver();
+        return;
         }
         else {
             floodAll(i,j)
-            Cover[i][j] = "0";
+            Cover[i][j] = String(Cover[i][j]);
             renderAll();
         };
         checkWin();
@@ -68,10 +126,10 @@ const checkWin = () => {                                                        
         let bombPlaced = 0;
         for(let i=0; i<Cover.length; i++) {
             for(let j=0; j<Cover[i].length; j++) {
-                if (Cover[i][j] === "0") {
+                if (Cover[i][j] === String(Cover[i][j])) {
                     totalUncovered++;
                 }
-                if (Numb[i][j] === 9) {
+                if (Cover[i][j] === 9 || Cover[i][j] === 11) {
                     bombPlaced++;
                 }
             }
@@ -90,9 +148,16 @@ const gameOver = () => {                                                        
 const uncoverEntireBoard = () => {                                                                                     //Exposes entire board
     for(let i=0; i<Cover.length; i++) {
         for(let j=0; j<Cover[i].length; j++) {
-            Cover[i][j] = "0";
+            if (Cover[i][j] === 9 || Cover[i][j] === 11) {
+                Cover[i][j] = 13;
+            };
+            if (Cover[i][j] === 10) {
+                Cover[i][j] = renderNumberBoard1(i,j) + renderNumberBoard2(i,j) + renderNumberBoard3(i,j) + renderNumberBoard4(i,j) + renderNumberBoard5(i,j) + renderNumberBoard6(i,j) + renderNumberBoard7(i,j) + renderNumberBoard8(i,j);
+            };
+            Cover[i][j] = String(Cover[i][j]);
         }
     }
+    renderAll();
 }
 
 const easyGame = () => {                                                                                               //Easy Mode
@@ -110,7 +175,6 @@ const hardGame = () => {                                                        
 const setGameDifficulty = (i) => {
     game.button = "screen";
     Cover = cover[i];
-    Numb = number[i];
     TotalSquareCount = game.totalSquareCount[i];
     BoardLength = game.boardLength[i];
     BoardWidth = game.boardWidth[i];
@@ -134,7 +198,6 @@ const clearEntireBoard = () => {                                                
     for(let i=0; i<Cover.length; i++) {
         for(let j=0; j<Cover[i].length; j++) {
             Cover[i][j] = 0;
-            Numb[i][j] = 0;
         }
     }
 }
@@ -144,182 +207,164 @@ const clearEntireBoard = () => {                                                
     const floodAll = (i,j) => {                                                                                        //Flood mechanism
         let flood = parseInt(Cover[i][j]);
         if (flood !== 0) {
-            flood = "0";
+            flood = String(Cover[i][j]);
             return;
         }
         floodLeft(i,j);
         floodUp(i,j);
         floodRight(i,j);
         floodDown(i,j);
-        flood = "0";
         renderAll();
     }
     
     const floodLeft = (i,j) => {
         if (j-1 < 0) return;
+        if (Cover[i][j-1] === 10 || Cover[i][j-1] === 11) return;
         if (Cover[i][j-1] !== 0) {
-            Cover[i][j-1] = "0";
+            Cover[i][j-1] = String(Cover[i][j-1]);
             return;
         }
-        Cover[i][j-1] = "0";
+        Cover[i][j-1] = String(Cover[i][j-1]);
         floodAll(i,j-1);
     }
     
     const floodUp = (i,j) => {
         if (i-1 < 0) return;
+        if (Cover[i-1][j] === 10 || Cover[i-1][j] === 11) return;
         if (Cover[i-1][j] !== 0) {
-            Cover[i-1][j] = "0"; 
+            Cover[i-1][j] = String(Cover[i-1][j]); 
             return;}      
-        Cover[i-1][j] = "0";                                  
+        Cover[i-1][j] = String(Cover[i-1][j]);                                
         floodAll(i-1,j);
     }
     
     const floodRight = (i,j) => {
         if (j+1 > Cover[i].length-1) return;
+        if (Cover[i][j+1] === 10 || Cover[i][j+1] === 11) return;
         if (Cover[i][j+1] !== 0) {
-            Cover[i][j+1] = "0";
+            Cover[i][j+1] = String(Cover[i][j+1]);
             return;}
-        Cover[i][j+1] = "0";
+        Cover[i][j+1] = String(Cover[i][j+1]);
         floodAll(i,j+1);
     }
     
     const floodDown = (i,j) => {
         if (i+1 > Cover.length-1) return;
+        if (Cover[i+1][j] === 10 || Cover[i+1][j] === 11) return;
         if (Cover[i+1][j] !== 0) {
-            Cover[i+1][j] = "0";
+            Cover[i+1][j] = String(Cover[i+1][j]);
             return;}
-        Cover[i+1][j] = "0";
+        Cover[i+1][j] = String(Cover[i+1][j]);
         floodAll(i+1,j)
     }
     
 const renderNumberBoard1 = (i,j) => {                                                                                //Search diagonal (up,left)    --   See renderNumberBoardTotal()
-            if (Numb[i][j] === 9) return 1;
+            if (Cover[i][j] === 9) return 0;
             if (i-1 < 0) return 0;
             if (j-1 < 0) return 0;
-            Numb[i][j] = 0;
-            if (Numb[i-1][j-1] === 9) {
-                Numb[i][j] ++
+            Cover[i][j] = 0;
+            if (Cover[i-1][j-1] === 9 || Cover[i-1][j-1] === 11) {
+                Cover[i][j] ++
             };
-            return Numb[i][j]
+            return Cover[i][j]
         }
         
 const renderNumberBoard2 = (i,j) => {                                                                                //Search vertical (up)
-            if (Numb[i][j] === 9) return 1;
+            if (Cover[i][j] === 9) return 0;
             if (i-1 < 0) return 0;
-            Numb[i][j] = 0;
-            if (Numb[i-1][j] === 9) {
-                Numb[i][j] ++
+            Cover[i][j] = 0;
+            if (Cover[i-1][j] === 9 || Cover[i-1][j] === 11) {
+                Cover[i][j] ++
             };
-            return Numb[i][j]
+            return Cover[i][j]
         }
 
 const renderNumberBoard3 = (i,j) => {                                                                                //Search diagonal (up,right)
-            if (Numb[i][j] === 9) return 1;
+            if (Cover[i][j] === 9) return 0;
             if (i-1 < 0) return 0;
-            if (j+1 > Numb[i].length-1) return 0;
-            Numb[i][j] = 0;
-            if (Numb[i-1][j+1] === 9) {
-                Numb[i][j] ++
+            if (j+1 > Cover[i].length-1) return 0;
+            Cover[i][j] = 0;
+            if (Cover[i-1][j+1] === 9 || Cover[i-1][j+1] === 11) {
+                Cover[i][j] ++
             };
-            return Numb[i][j]
+            return Cover[i][j]
         }
 
 const renderNumberBoard4 = (i,j) => {                                                                                //Search horizontal (left)
-            if (Numb[i][j] === 9) return 1;
+            if (Cover[i][j] === 9) return 0;
             if (j-1 < 0) return 0;
-            Numb[i][j] = 0;
-            if (Numb[i][j-1] === 9) {
-                Numb[i][j] ++
+            Cover[i][j] = 0;
+            if (Cover[i][j-1] === 9 || Cover[i][j-1] === 11) {
+                Cover[i][j] ++
             };
-            return Numb[i][j]
+            return Cover[i][j]
         }
 
 const renderNumberBoard5 = (i,j) => {                                                                                //Search horizontal (right)
-            if (Numb[i][j] === 9) return 1;
-            if (j+1 > Numb[i].length-1) return 0;
-            Numb[i][j] = 0;
-            if (Numb[i][j+1] === 9) {
-                Numb[i][j] ++
+            if (Cover[i][j] === 9) return 0;
+            if (j+1 > Cover[i].length-1) return 0;
+            Cover[i][j] = 0;
+            if (Cover[i][j+1] === 9 || Cover[i][j+1] === 11) {
+                Cover[i][j] ++
             };
-            return Numb[i][j]
+            return Cover[i][j]
         }
  
 const renderNumberBoard6 = (i,j) => {                                                                                //Search diagonal (down,left)
-            if (Numb[i][j] === 9) return 1;
-            if (i+1 > Numb.length-1) return 0;
+            if (Cover[i][j] === 9) return 0;
+            if (i+1 > Cover.length-1) return 0;
             if (j-1 < 0) return 0;
-            Numb[i][j] = 0;
-            if (Numb[i+1][j-1] === 9) {
-                Numb[i][j] ++
+            Cover[i][j] = 0;
+            if (Cover[i+1][j-1] === 9 || Cover[i+1][j-1] === 11) {
+                Cover[i][j] ++
             };
-            return Numb[i][j]
+            return Cover[i][j]
         }
  
 const renderNumberBoard7 = (i,j) => {                                                                                //Search vertical (down)
-            if (Numb[i][j] === 9) return 1;
-            if (i+1 > Numb.length-1) return 0;
-            Numb[i][j] = 0;
-            if (Numb[i+1][j] === 9) {
-                Numb[i][j] ++
+            if (Cover[i][j] === 9) return 0;
+            if (i+1 > Cover.length-1) return 0;
+            Cover[i][j] = 0;
+            if (Cover[i+1][j] === 9 || Cover[i+1][j] === 11) {
+                Cover[i][j] ++
             };
-            return Numb[i][j]
+            return Cover[i][j]
         }
 
 const renderNumberBoard8 = (i,j) => {                                                                                //Search diagonal (down,right)
-            if (Numb[i][j] === 9) return 2;
-            if (i+1 > Numb.length-1) return 0;         
-            if (j+1 > Numb[i].length-1) return 0;
-            Numb[i][j] = 0;
-            if (Numb[i+1][j+1] === 9) {
-                Numb[i][j] ++
+            if (Cover[i][j] === 9) return 9;
+            if (i+1 > Cover.length-1) return 0;         
+            if (j+1 > Cover[i].length-1) return 0;
+            Cover[i][j] = 0;
+            if (Cover[i+1][j+1] === 9 || Cover[i+1][j+1] === 11) {
+                Cover[i][j] ++
             };
-            return Numb[i][j]
+            return Cover[i][j]
         }
  
  const renderNumberBoardTotal = () => {                                                                              //For each un-mined square, search in 8-grid adjacent manner for bombs. Display number according to number of adjacent mines.
-        for (let i=0; i<Numb.length; i++) {
-           for (let j=0; j<Numb[i].length; j++) {
-            Numb[i][j] = renderNumberBoard1(i,j) + renderNumberBoard2(i,j) + renderNumberBoard3(i,j) + renderNumberBoard4(i,j) + renderNumberBoard5(i,j) + renderNumberBoard6(i,j) + renderNumberBoard7(i,j) + renderNumberBoard8(i,j);
-            Cover[i][j] = Numb[i][j];
+        for (let i=0; i<Cover.length; i++) {
+           for (let j=0; j<Cover[i].length; j++) {
+            Cover[i][j] = renderNumberBoard1(i,j) + renderNumberBoard2(i,j) + renderNumberBoard3(i,j) + renderNumberBoard4(i,j) + renderNumberBoard5(i,j) + renderNumberBoard6(i,j) + renderNumberBoard7(i,j) + renderNumberBoard8(i,j);
         }
     } renderAll();
     }
     
 const renderBomb = () => {
         for (let i=0; i<BombNumber; i++) {
-            Numb[Math.floor(Math.random() * BoardWidth)][Math.floor(Math.random() * BoardLength)] = 9;                //Add unique number generator
+            Cover[Math.floor(Math.random() * BoardWidth)][Math.floor(Math.random() * BoardLength)] = 9;              
         };            
         renderAll();
     }
 
 const renderGameOver = () => {                                                                                      
     gameOutput.textContent = "GAME OVER";
+    renderAll();
 }
 
 const renderWin = () => {
     gameOutput.textContent = "Win";
-    for(let i=0; i<Cover.length; i++) {
-        for(let j=0; j<Cover[i].length; j++) {
-            document.querySelector("td").removeEventListener("click", clickCover(i,j));
-            document.querySelector("td").removeEventListener("contextmenu", clickFlag(i,j));
-        }
-    }
 }
-    
-const renderBoardNum = () => {                                                                                       //Renders board underneath, holds square number and bombs
-        boardBodyNum.textContent = "";
-        for(let i=0; i<Numb.length; i++)
-        {
-            const boardNumTr = document.createElement("tr");
-            for(let j=0; j<Numb[i].length; j++)
-            {
-                const boardNumTd = document.createElement("td");
-                boardNumTd.innerText = Numb[i][j];
-                boardNumTr.append(boardNumTd);
-            }
-            boardBodyNum.append(boardNumTr);
-        }
-    }
     
 const renderBoardCover = () => {                                                                                     //Renders board above, has number corresponding to square number underneath
         boardBodyCover.textContent = ""; 
@@ -333,11 +378,14 @@ const renderBoardCover = () => {                                                
                     boardCoverTd.addEventListener("click", clickCover(i,j));
                     boardCoverTd.addEventListener("contextmenu", clickFlag(i,j));
                     boardCoverTr.append(boardCoverTd);
-                    if (Cover[i][j] === "0") {
-                        boardCoverTd.style.opacity = "0";
+                    if (typeof Cover[i][j] === "string") {
+                        boardCoverTd.style.backgroundColor = "grey";
                         }
-                    if (Cover[i][j] === "1") {
-                        boardCoverTd.style.backgroundColor = "green";
+                    if (Cover[i][j] === 10 || Cover[i][j] === 11) {
+                        boardCoverTd.innerHTML = "🚩";
+                        }
+                    if (Cover[i][j] === "13") {
+                        boardCoverTd.innerHTML = "💣";
                         }
                     }
                     boardBodyCover.append(boardCoverTr);
@@ -347,7 +395,6 @@ const renderBoardCover = () => {                                                
             
 const renderAll = () => {
                 renderBoardCover();
-                renderBoardNum();
                 renderScreen();
             }
             
@@ -366,7 +413,6 @@ const renderScreen = () => {
     const buttonOnDisplay = document.querySelector("." + game.button)
     buttonOnDisplay.style.display = "block";
     if (game.button === "mode") {
-    boardBodyNum.textContent = "";
     boardBodyCover.textContent = "";
     gameOutput.textContent = "";
 } 
