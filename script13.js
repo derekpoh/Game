@@ -180,6 +180,7 @@ const setGameDifficulty = (i) => {
     BoardWidth = game.boardWidth[i];
     BombNumber = game.bombNumber[i];
     FlagNumber = game.flagNumber[i];
+    randomBackgroundImage();
     main();
 }
 
@@ -192,6 +193,7 @@ const homePage = () => {                                                        
     game.button = "mode"; 
     clearEntireBoard();
     renderScreen();
+    homeBackground();
 }
 
 const clearEntireBoard = () => {                                                                                      //Removes all board numbers and bombs

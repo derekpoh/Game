@@ -1,3 +1,6 @@
+const body = document.querySelector("body");
+
+const backgroundArray =
 [
 "https://ih0.redbubble.net/image.654323521.5931/flat,1000x1000,075,f.u5.jpg",
 "https://wallpaperchain.com/download/doge/doge-wallpaper-43.jpg",
@@ -13,24 +16,23 @@
 "https://www.pixelstalk.net/wp-content/uploads/images6/Meme-Background-Free-Download.jpg",
 ]
 
-const addImage = (randomNumber) => {
-    const randomImage = imgArray[randomNumber];
-    const newImage = document.createElement("div");
-    const imgTag = document.createElement("img");
-    imgTag.setAttribute("src", randomImage);
-    newImage.append(imgTag);
-    displayArray.push(newImage);
-    //console.log(displayArray);
-    renderAll();
+
+
+const homeBackground = () => {
+    body.style.backgroundImage = null;
+    body.style.backgroundImage = "url('https://www.linkpicture.com/q/2224701.jpg')";
 }
 
-function renderScreen() {
-    welcomeScreen.style.display = "none";
-    gameScreen.style.display = "none";
-    scoreScreen.style.display = "none"; //? block will show
-    const screen = document.querySelector("#" + game.screen);
-    screen.style.display = "block";
-  }
+const changeBackground = (randomNumber) => {
+    body.style.backgroundImage = null;
+    body.style.backgroundImage = "url('" + backgroundArray[randomNumber] + "')";
+}
+
+const randomBackgroundImage = () => {
+    let randomNumber = Math.floor(Math.random() * 12);                                                  
+    changeBackground(randomNumber);
+}
+
 
 
 const playSound = () => {
