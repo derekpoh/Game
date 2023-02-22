@@ -36,7 +36,7 @@ const randomBackgroundImage = () => {
 
 
 const playSound = () => {
-    let audio = new Audio("WTF Boom.mp3");
+    let audio = new Audio("Audio/WTF Boom.mp3");
     audio.play();
 }
 let lolLol = document.querySelector("#Meme");

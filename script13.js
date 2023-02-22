@@ -141,6 +141,7 @@ const checkWin = () => {                                                        
     }
     
 const gameOver = () => {                                                                                                //Game is lose if player clicks on bomb
+    playSound();
     uncoverEntireBoard();
     renderGameOver();
 }
@@ -187,6 +188,7 @@ const setGameDifficulty = (i) => {
 const resetGame = () => {                                                                                             //Reset game
     clearEntireBoard();
     main();
+    randomBackgroundImage();
 }
 
 const homePage = () => {                                                                                              //Go back to home screen
