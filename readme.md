@@ -24,7 +24,9 @@ Otherwise, the uncovered cell reveals a number. Each number corresponds to the n
 ## Game Architecture
 To emulate the game, I had to understand the different components of Minesweeper. After playing the game multiple times, I deconstructed the game into several important rules and components.
 
-
+![wireframe](https://github.com/derekpoh/Minesweeper/blob/main/wireframe/wireframe.jpg)
+![search function](https://github.com/derekpoh/Minesweeper/blob/main/wireframe/search_function.png)
+![flood function](https://github.com/derekpoh/Minesweeper/blob/main/wireframe/flood_function.png)
 
 # User Stories
 | As a User, when I                        |  This happens                
