@@ -17,12 +17,12 @@ const backgroundArray =
 ]
 
 const audioFile = {
-    click: ["Audio/bonk.mp3", "Audio/bruh.mp3", "Audio/cantouchthis.mp3", "Audio/fart.mp3", "Audio/gandalf.mp3", "Audio/garbage.mp3", "Audio/hehe.mp3", "Audio3/hellnaw.mp3", "Audio/hello.mp3", "Audio3/herewegoagain.mp3", "Audio/Jeff.mp3", "Audio3/knock.mp3", 
-    "Audio3/minecraft.mp3", "Audio3/nice.mp3", "Audio3/obiwan.mp3", "Audio3/oiu.mp3", "Audio3/prettygood.mp3", "Audio3/Punch.mp3", "Audio3/roblox.mp3", "Audio3/snake.mp3", "Audio3/weed.mp3"],
+    click: ["Audio/bonk.mp3", "Audio/bruh.mp3", "Audio/cantouchthis.mp3", "Audio/fart.mp3", "Audio/gandalf.mp3", "Audio/garbage.mp3", "Audio/hehe.mp3", "Audio/hellnaw.mp3", "Audio/hello.mp3", "Audio/herewegoagain.mp3", "Audio/Jeff.mp3", "Audio/knock.mp3", 
+    "Audio/minecraft.mp3", "Audio/nice.mp3", "Audio/obiwan.mp3", "Audio/oiu.mp3", "Audio/prettygood.mp3", "Audio/Punch.mp3", "Audio/roblox.mp3", "Audio/snake.mp3", "Audio/weed.mp3"],
 
-    win: ["Audio2/johncena.mp3", "Audio2/money.mp3", "Audio2/omgwow.mp3", "Audio2/rick.mp3", "Audio2/zawarudo.mp3"],
+    win: ["Audio/johncena.mp3", "Audio/money.mp3", "Audio/omgwow.mp3", "Audio/rick.mp3", "Audio/zawarudo.mp3"],
 
-    lose: ["Audio2/CoffinMeme.mp3", "Audio2/directed.mp3", "Audio2/nogodplease.mp3", "Audio2/WTFBoom.mp3", "Audio2/titanic.mp3", "Audio2/walao.mp3", "Audio2/ohnolaugh.mp3"],
+    lose: ["Audio/CoffinMeme.mp3", "Audio/directed.mp3", "Audio/nogodplease.mp3", "Audio/WTFBoom.mp3", "Audio/titanic.mp3", "Audio/walao.mp3", "Audio/ohnolaugh.mp3"],
 }
 
 
@@ -63,7 +63,7 @@ const playLoseSound = () => {
 }
 
 const playBoom = () => {
-    let sound = new Audio("Audio2/WTFBoom.mp3");
+    let sound = new Audio("Audio/WTFBoom.mp3");
     sound.play();
 }
 let lolButton = document.querySelector("#Meme");
