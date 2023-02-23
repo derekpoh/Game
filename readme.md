@@ -22,7 +22,7 @@ To cater to the cool players, I developed a twist to the vanilla game. By incorp
 
 ## Deployment
 Game can be found at:
-
+https://derekpoh.github.io/Memesweeper/
 
 ## How To Play
 In this puzzle video game, the player starts with a board divided into cells. Mines are randomly distributed across the cells. Each cell has 3 different states: covered, uncovered and flagged. Covered cells are blank and clickable, while uncovered cells are informative and cannot be interacted with. Flagged cells denote where the player suspects a bomb might be located. To prevent unintentional exposure of potential mined cells, flagged cells are unclickable until they are unflagged. 
