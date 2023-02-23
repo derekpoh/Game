@@ -1,54 +1,49 @@
-# Minesweeper
+#Minesweeper
 
-##  User stories (Agile) / Requirements
+##Timeframe
+  * 1 week
 
-As a user I will be able to:
+##Technologies & Tools used
+  * HTML
+  * CSS
+  * Javascript
+  * Github
 
-* See a blank board when the game starts
-* Click on any unopened/flagged square to open it
-* Flag any unopened square susptected to contain a mine
-* Upon opening an un-mined square, reveal a blank/'contains 0' square, or with a number ranging from 1-8 (indicating the number of adjacent mines to the opened square)
-* Flood mechanism
-* See a lose alert upon clicking a mined square
-* See a win alert upon revealing all un-mined squares
+##Description
+This is a classic Minesweeper game with 3 different difficulty levels. The game was developed using HTML, CSS and Javascript during my time as a student of the Software Engineering Immersive course at General Assembly.
 
-## Wireframe -> Web* / Mobile
+Prior to this project, I had not played Minesweeper before. While browsing through a list of possible games, I stumbled upon Minesweeper and was immediately hooked. The game can be challenging yet addictive.
 
+##How To Play
+In this puzzle video game, the player starts with a board divided into cells. Mines are randomly distributed across the cells. Each cell has 3 different states: covered, uncovered and flagged. Covered cells are blank and clickable, while uncovered cells are informative and cannot be interacted with. Flagged cells denote where the player suspects a bomb might be located. To prevent unintentional exposure of potential mined cells, flagged cells are unclickable until they are unflagged. 
 
-### Pseudocoding
-1) Define required constants:
+The game begins when the player selects a covered cell on the board. If the player clicks on a mined cell, the game ends with a loss.
+Otherwise, the uncovered cell reveals a number. Each number corresponds to the number of mines located diagonally and adjacent to the cell. The objective of the game is to uncover all the unmined cells without exposing any mined cell. 
 
 
-2) Define required variables used to track the state of the game:
-   2.1) Use a board array to represent the squares
-       - 2 board arrays: 1 to hold square number/bomb status, 1 to hold covered/uncovered status
-       - latter board will overlap over other board
-
-3) Store elements on the page that will be accessed in code more than once in variables to make code more concise, readable and performant:
+##Game Architecture
+To emulate the game, I had to understand the different components of Minesweeper. After playing the game multiple times, I deconstructed the game into several important rules and components.
 
 
 
-4) Upon loading the app should:              //main()
-  4.1) Initialize the state variables:
-  - set all squares to covered state              
-  - set all squares in board array to null/0       
-  - add eventlistners to each square (2 listeners to each square => UNCOVER and FLAG squares)
-  - assign fixed number of bombs to random squares
-  - when bombs assigned, squares are assigned a number corresponding to number of bombs around them in 8-grid adjacent manner
+# User Stories
+| As a User, when I                        |  This happens                
+| :--------------------------------------- |:-----------------------------------------------|
+| Click on selected difficulty             |  See a covered board with varying number of squares
+| Click on a square                        |  The square will display either a number, an empty square, or a bomb
+| Right-click                              |  To flag the square. Flagged cells denote where the player suspects a bomb might be located. To prevent unintentional exposure of potential mined cells, flagged cells are unclickable until they are unflagged.
+| Click on a mined square                  |  The game ends with a lost, with a game over prompt. 
+| Click on an empty square                 |  All adjacent empty squares will be revealed, and all numbered squares adjacent to those will be displayed as well.
+| Click on a numbered square               |  Only that square will be revealed.
+| See a number                             |  Corresponds to the number of mines located diagonally and adjacent to the cell. 
+| Click on reset button                    |  Resets the board at the selected difficulty
+| Click on home button                     |  Returns to the start screen.
 
-
-  4.2) Render those state variables to the page:
-    4.2.1) Render the board:
-    - iterate through each element in all the display array
-    - value of element will determine property of corresponding square: number on it, mined, covered/uncovered
-
-5) Handle a player clicking a square:
-- get index of square clicked (eventlistener, idx)
-- check status of square (if uncovered => return, if covered => uncovered)
-- check number, if bomb => lose condition
-- screen through all the squares again (if number of uncovered squared = total number of square - total number of bombs ==> win condition)
-
-		
-
-
+##Step-By-Step Approach
+Using pseudocode, I broke the process down into several main components.
+  * Part 1: Design the blank board
+  * Part 2: Generate the bombs in random cells
+  * Part 3: Implement 'search' function for each cell
+  * Part 4: Implement 'flood' function for each cell
+  * Part 5: Design multiple difficulty levels
 

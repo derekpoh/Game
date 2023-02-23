@@ -16,7 +16,18 @@ const backgroundArray =
 "https://www.pixelstalk.net/wp-content/uploads/images6/Meme-Background-Free-Download.jpg",
 ]
 
+const audioFile = {
+    click: ["audio/bonk.mp3", "audio/bruh.mp3", "audio/cantouchthis.mp3", "audio/fart.mp3", "audio/gandalf.mp3", "audio/garbage.mp3", "audio/hehe.mp3", "audio/hellnaw.mp3", "audio/hello.mp3", "audio/herewegoagain.mp3", "audio/Jeff.mp3", "audio/knock.mp3", 
+    "audio/minecraft.mp3", "audio/nice.mp3", "audio/obiwan.mp3", "audio/oiu.mp3", "audio/prettygood.mp3", "audio/Punch.mp3", "audio/roblox.mp3", "audio/snake.mp3", "audio/weed.mp3"],
 
+    win: ["audio/johncena.mp3", "audio/money.mp3", "audio/omgwow.mp3", "audio/rick.mp3", "audio/zawarudo.mp3"],
+
+    lose: ["audio/CoffinMeme.mp3", "audio/directed.mp3", "audio/nogodplease.mp3", "audio/WTFBoom.mp3", "audio/titanic.mp3", "audio/walao.mp3", "audio/ohnolaugh.mp3"],
+}
+
+
+
+//Change background
 
 const homeBackground = () => {
     body.style.backgroundImage = null;
@@ -34,10 +45,26 @@ const randomBackgroundImage = () => {
 }
 
 
+//Play audio files
 
-const playSound = () => {
-    let audio = new Audio("Audio/WTF Boom.mp3");
-    audio.play();
+const playClickSound = () => {
+    let sound = new Audio(audioFile.click[Math.floor(Math.random() * audioFile.click.length)]);
+    sound.play();
 }
-let lolLol = document.querySelector("#Meme");
-lolLol.addEventListener("click", playSound)
+
+const playWinSound = () => {
+    let sound = new Audio(audioFile.win[Math.floor(Math.random() * audioFile.win.length)]);
+    sound.play();
+}
+
+const playLoseSound = () => {
+    let sound = new Audio(audioFile.lose[Math.floor(Math.random() * audioFile.lose.length)]);
+    sound.play();
+}
+
+const playBoom = () => {
+    let sound = new Audio("audio/WTFBoom.mp3");
+    sound.play();
+}
+let lolButton = document.querySelector("#Meme");
+lolButton.addEventListener("click", playBoom)

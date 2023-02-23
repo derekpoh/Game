@@ -117,8 +117,9 @@ const clickCover = (i,j) => () => {                                             
             Cover[i][j] = String(Cover[i][j]);
             renderAll();
         };
+        playClickSound();
         checkWin();
-        renderAll()
+        renderAll();
     }
     
 const checkWin = () => {                                                                                                 //Checks if game is won after each click
@@ -135,13 +136,14 @@ const checkWin = () => {                                                        
             }
         }
         if (totalUncovered === TotalSquareCount - bombPlaced) {
+            playWinSound();
             uncoverEntireBoard();
             renderWin();
-        }
+        }   
     }
     
 const gameOver = () => {                                                                                                //Game is lose if player clicks on bomb
-    playSound();
+    playLoseSound();
     uncoverEntireBoard();
     renderGameOver();
 }
@@ -391,6 +393,9 @@ const renderBoardCover = () => {                                                
                     if (Cover[i][j] === "13") {
                         boardCoverTd.innerHTML = "💣";
                         }
+                    if (Cover[i][j] === "0") {
+                        boardCoverTd.innerHTML = "";
+                        }   
                     }
                     boardBodyCover.append(boardCoverTr);
                 }
