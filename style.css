@@ -2,15 +2,18 @@ body {
     background-size: cover;
   }
 
-h1 {
+h2 {
+    display: flex;
     color: white;
-    text-align: center;
-    font-size: 50px;
+    font-size: 200px;
+    justify-content: center;
 }
 
-h2 {
-    color: white;
-    text-align: center;
+output {
+    -webkit-text-stroke: 3px red;
+    color: black;
+    font-size: 150px;
+    position: absolute;
 }
 
 .mode {
@@ -19,12 +22,13 @@ h2 {
 }
 
 .screen {
-margin-left: 20%;
-margin-top: 15%;
+    display: flex;
+    margin-left: 20%;
+    margin-top: 10%;
 }
 
 .buttons {
-    font-size: 40px;
+    font-size: 50px;
     margin: 10px 
 }
 
@@ -37,12 +41,13 @@ table {
 tbody {
     position: absolute;
     border: 2px black solid;
-    margin-top: 5%;
+    background: white;
+
 }
 
 .cover > tr > td {
     font-size: 30px;
-    background-color: blue;
+    background-color: black;
     color: black;
     user-select: none;
     text-align: center;
@@ -50,4 +55,8 @@ tbody {
     height: 40px;
 }
 
+#Meme {
+    position: absolute;
+    bottom: 0;
+}
 
