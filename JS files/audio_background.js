@@ -17,8 +17,8 @@ const backgroundArray =
 ]
 
 const audioFile = {
-    click: ["audio/bonk.mp3", "audio/bruh.mp3", "audio/cantouchthis.mp3", "audio/fart.mp3", "audio/gandalf.mp3", "audio/garbage.mp3", "audio/hehe.mp3", "audio/hellnaw.mp3", "audio/hello.mp3", "audio/herewegoagain.mp3", "audio/Jeff.mp3", "audio/knock.mp3", 
-    "audio/minecraft.mp3", "audio/nice.mp3", "audio/obiwan.mp3", "audio/oiu.mp3", "audio/prettygood.mp3", "audio/Punch.mp3", "audio/roblox.mp3", "audio/snake.mp3", "audio/weed.mp3"],
+    click: ["audio/bonk.mp3", "audio/bruh.mp3", "audio/cantouchthis.mp3", "audio/fart.mp3", "audio/gandalf.mp3", "audio/garbage.mp3", "audio/hehe.mp3", "audio/hellnaw.mp3", "audio/hello.mp3", "audio/herewegoagain.mp3", "audio/Jeff.mp3", "audio3/knock.mp3", 
+    "audio3/minecraft.mp3", "audio3/nice.mp3", "audio3/obiwan.mp3", "audio3/oiu.mp3", "audio3/prettygood.mp3", "audio3/Punch.mp3", "audio3/roblox.mp3", "audio3/snake.mp3", "audio3/weed.mp3"],
 
     win: ["audio2/johncena.mp3", "audio2/money.mp3", "audio2/omgwow.mp3", "audio2/rick.mp3", "audio2/zawarudo.mp3"],
 
