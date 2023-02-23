@@ -1,6 +1,3 @@
-/*----- constants -----*/
-
-
 /*----- state variables -----*/
 
 const cover = [[
@@ -59,7 +56,6 @@ const game = {
     boardLength: [10,18,24],
     boardWidth: [8,14,20],
     bombNumber: [10,42,107],
-    flagNumber: [10,42,107],
 };
 
 /*----- cached elements  -----*/
@@ -70,11 +66,10 @@ let TotalSquareCount = game.totalSquareCount[0];
 let BoardLength = game.boardLength[0];
 let BoardWidth = game.boardWidth[0];
 let BombNumber = game.bombNumber[0];
-let FlagNumber = game.flagNumber[0];
 
 /*----- event listeners -----*/
 
-const clickFlag = (i,j) => (event) => {                                                                                    //Places a flag on potential mine square 
+const clickFlag = (i,j) => (event) => {                                                                                    //Places a flag on potential mined square
     event.preventDefault();                                                                                                
     if(Cover[i][j] === String(Cover[i][j])) return;
     if (Cover[i][j] === 11) {                                                                                              //Returns bomb to original when unflagged
@@ -88,14 +83,18 @@ const clickFlag = (i,j) => (event) => {                                         
         return;
     }
     let flagPlaced = 0;                                                                                                    //Limits max number of flags = number of bombs placed
+    let bombPlaced = 0;
     for(let i=0; i<Cover.length; i++) {
         for(let j=0; j<Cover[i].length; j++) {
-            if (Cover[i][j] === 10) {
+            if (Cover[i][j] === 10 || Cover[i][j] === 11) {
                 flagPlaced++;
+            }
+            if (Cover[i][j] === 9 || Cover[i][j] === 11) {
+                bombPlaced++;
             }
         }
     }
-    if (flagPlaced === FlagNumber) return;                                                                                //Bomb cell = 11, rest of cells = 10
+    if (flagPlaced === bombPlaced) return;                                                                                 //Bomb cell = 11, rest of cells = 10
     if (Cover[i][j] === 9) {
         Cover[i][j] = 11;
         renderAll();
@@ -111,7 +110,7 @@ const clickCover = (i,j) => () => {                                             
     if (Cover[i][j] === 9) {
         gameOver();
         return;
-        }
+    }
         else {
             floodAll(i,j)
             Cover[i][j] = String(Cover[i][j]);
@@ -182,7 +181,6 @@ const setGameDifficulty = (i) => {
     BoardLength = game.boardLength[i];
     BoardWidth = game.boardWidth[i];
     BombNumber = game.bombNumber[i];
-    FlagNumber = game.flagNumber[i];
     randomBackgroundImage();
     main();
 }
@@ -370,6 +368,7 @@ const renderGameOver = () => {
 
 const renderWin = () => {
     gameOutput.textContent = "Win";
+    renderAll();
 }
     
 const renderBoardCover = () => {                                                                                     //Renders board above, has number corresponding to square number underneath

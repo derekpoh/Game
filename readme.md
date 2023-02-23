@@ -12,11 +12,17 @@
 ## Description
 This is a classic Minesweeper game with 3 different difficulty levels. The game was developed using HTML, CSS and Javascript during my time as a student of the Software Engineering Immersive course at General Assembly.
 
+The origin of Minesweeper is unclear. According to TechRadar, the first version of the game was 1990's Microsoft Minesweeper, but Eurogamer says Mined-Out by Ian Andrew (1983) was the first Minesweeper game. Curt Johnson, the creator of Microsoft Minesweeper, acknowledges that his game's design was borrowed from another game, but it was not Mined-Out, and he does not remember which game it is. 
+
 Prior to this project, I had not played Minesweeper before. While browsing through a list of possible games, I stumbled upon Minesweeper and was immediately hooked. The game can be challenging yet addictive.
 
 To cater to the cool players, I developed a twist to the vanilla game. By incorporating popular internet memes, this game hopes to bring out the MemeLord in everyone.
 
 ![homescreen](readme_resource/screenshot_homepage.png)
+
+## Deployment
+Game can be found at:
+
 
 ## How To Play
 In this puzzle video game, the player starts with a board divided into cells. Mines are randomly distributed across the cells. Each cell has 3 different states: covered, uncovered and flagged. Covered cells are blank and clickable, while uncovered cells are informative and cannot be interacted with. Flagged cells denote where the player suspects a bomb might be located. To prevent unintentional exposure of potential mined cells, flagged cells are unclickable until they are unflagged. 
@@ -63,9 +69,13 @@ Using pseudocode, I broke the process down into several main components.
 
 ## Future Development
 As this was a course project for submission, there would unlikely be further changes made. However, if there were, possible improvements could include: 
+  - Reworking the game with cleaner codes
+  - Adding a timer and scoring system
+  - Adding an extra button which brings the player to an instructions page
   - Adding more Memes
-
+ 
 ## Game Resource Acknowledgement
 Resources used in this project do not belong to me. All rights belong to the original artists and owners.
   - [Audio files](https://www.myinstants.com/en/index/sg/)
   - Background Images (links used in JS files)
+  - Minesweeper background info (taken from wikipedia)

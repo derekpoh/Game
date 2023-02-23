@@ -29,9 +29,9 @@ const audioFile = {
 
 //Change background
 
-const homeBackground = () => {
+const homeBackground = () => {                                                                                               //reference = https://stackoverflow.com/questions/34690104/make-javascript-change-background-image-every-5-seconds
     body.style.backgroundImage = null;
-    body.style.backgroundImage = "url('https://www.linkpicture.com/q/2224701.jpg')";
+    body.style.backgroundImage = "url('readme_resource/background.png')";
 }
 
 const changeBackground = (randomNumber) => {
@@ -47,7 +47,7 @@ const randomBackgroundImage = () => {
 
 //Play audio files
 
-const playClickSound = () => {
+const playClickSound = () => {                                                                                               //reference = https://stackoverflow.com/questions/9419263/how-to-play-audio#comment11906843_9419263
     let sound = new Audio(audioFile.click[Math.floor(Math.random() * audioFile.click.length)]);
     sound.play();
 }
