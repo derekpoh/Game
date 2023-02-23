@@ -20,9 +20,9 @@ const audioFile = {
     click: ["audio/bonk.mp3", "audio/bruh.mp3", "audio/cantouchthis.mp3", "audio/fart.mp3", "audio/gandalf.mp3", "audio/garbage.mp3", "audio/hehe.mp3", "audio/hellnaw.mp3", "audio/hello.mp3", "audio/herewegoagain.mp3", "audio/Jeff.mp3", "audio/knock.mp3", 
     "audio/minecraft.mp3", "audio/nice.mp3", "audio/obiwan.mp3", "audio/oiu.mp3", "audio/prettygood.mp3", "audio/Punch.mp3", "audio/roblox.mp3", "audio/snake.mp3", "audio/weed.mp3"],
 
-    win: ["audio/johncena.mp3", "audio/money.mp3", "audio/omgwow.mp3", "audio/rick.mp3", "audio/zawarudo.mp3"],
+    win: ["audio2/johncena.mp3", "audio2/money.mp3", "audio2/omgwow.mp3", "audio2/rick.mp3", "audio2/zawarudo.mp3"],
 
-    lose: ["audio/CoffinMeme.mp3", "audio/directed.mp3", "audio/nogodplease.mp3", "audio/WTFBoom.mp3", "audio/titanic.mp3", "audio/walao.mp3", "audio/ohnolaugh.mp3"],
+    lose: ["audio2/CoffinMeme.mp3", "audio2/directed.mp3", "audio2/nogodplease.mp3", "audio2/WTFBoom.mp3", "audio2/titanic.mp3", "audio2/walao.mp3", "audio2/ohnolaugh.mp3"],
 }
 
 
