@@ -29,9 +29,9 @@ Otherwise, the uncovered cell reveals a number. Each number corresponds to the n
 ## Game Architecture
 To emulate the game, I had to understand the different components of Minesweeper. After playing the game multiple times, I deconstructed the game into several important rules and components.
 
-![wireframe](https://github.com/derekpoh/Minesweeper/blob/main/wireframe/wireframe.jpg)
-![search function](https://github.com/derekpoh/Minesweeper/blob/main/wireframe/search_function.png)
-![flood function](https://github.com/derekpoh/Minesweeper/blob/main/wireframe/flood_function.png)
+![wireframe](readme_resource/wireframe.jpg)
+![search function](readme_resource/search_function.png)
+![flood function](readme_resource/flood_function.png)
 
 I used the MVC approach for this game, utilising an array as a model representation for the board. Each square/tile is represented by an element in the array, with different values correlating to varying functions.
 
