@@ -21,7 +21,7 @@ To cater to the cool players, I developed a twist to the vanilla game. By incorp
 ![homescreen](readme_resource/screenshot_homepage.png)
 
 ## Deployment
-Game can be found at:
+Game can be found at: <br>
 https://derekpoh.github.io/Memesweeper/
 
 ## How To Play
